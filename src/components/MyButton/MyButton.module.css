@@ -1,0 +1,61 @@
+.myBtn__primary {
+  background-color: lightgrey;
+  font-size: 20px;
+  color: #000;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.myBtn__edit {
+  background-color: rgb(67, 67, 151);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.myBtn__save {
+  background-color: green;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.myBtn__position {
+  background-color: lightgrey;
+  font-size: 16px;
+  color: #000;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top:60px;
+  right: 330px;
+  font-family: inherit;
+}
+
+.deleteBtn {
+  background-color: rgb(236, 10, 62);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled {
+    opacity: .5;
+}

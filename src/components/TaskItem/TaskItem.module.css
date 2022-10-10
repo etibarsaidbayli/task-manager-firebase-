@@ -1,0 +1,35 @@
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding:10px 15px;
+    margin-bottom: 10px;
+}
+
+.taskItem__title {
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.taskItem__tags {
+    display: flex;
+    align-items: center;
+}
+
+.taskItem__tags span {
+    background-color: rgb(86, 86, 86);
+    color:#fff;
+    padding:3px;
+    border-radius: 9px;
+}
+
+
+.taskItem__tags div {
+    width: 200px;
+    gap:10px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}   

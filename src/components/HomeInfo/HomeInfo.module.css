@@ -1,0 +1,14 @@
+.homeInfo {
+    text-align: center;
+    padding:50px 0;
+}
+
+.homeInfo p {
+    font-size: 25px;
+}
+
+.homeInfo p a {
+    font-weight: bold;
+    color:#000;
+    text-decoration: underline;
+}

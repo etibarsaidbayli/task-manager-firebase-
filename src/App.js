@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
 
+import TasksListPage from "./pages/TasksListPage";
+import HomePage from "./pages/HomePage";
+import CreateTaskPage from "./pages/CreateTaskPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import LayOut from "./components/LayOut";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import RequireAuth from "./hoc/RequireAuth";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LayOut />}>
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="createtask" element={<RequireAuth>
+          <CreateTaskPage/>
+        </RequireAuth>} />
+        <Route path="taskslist" element={<RequireAuth>
+          <TasksListPage/>
+        </RequireAuth>} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
