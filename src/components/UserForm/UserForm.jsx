@@ -5,7 +5,7 @@ import { useState } from "react";
 function UserForm({ title, handleClick,setErrorMessage }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
+  const [userName,setUserName] = useState("")
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setEmail("")
@@ -22,12 +22,25 @@ function UserForm({ title, handleClick,setErrorMessage }) {
     setErrorMessage("")
   }
 
+  const handleNameChange = (e) =>{
+    setUserName(e.target.value) 
+    
+   
+  }
+
   return (
     <form
       onSubmit={handleFormSubmit}
       className={style.userForm}
       autoComplete="off"
-    >
+    >   
+     <input
+     onChange={handleNameChange}
+        value={userName}
+        type="text"
+        placeholder="adinizi qeyd edin"
+      />
+
       <input
         onChange={handleEmailChange}
         value={email}
@@ -43,7 +56,7 @@ function UserForm({ title, handleClick,setErrorMessage }) {
       <MyButton
         role="primary"
         disabled={false}
-        handleClick={() => handleClick(email, pass)}
+        handleClick={() => handleClick(userName,email, pass)}
       >
         {title}
       </MyButton>
