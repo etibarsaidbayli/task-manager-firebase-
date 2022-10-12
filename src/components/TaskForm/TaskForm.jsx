@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { set, ref } from "firebase/database";
+import  { useDispatch } from 'react-redux'
 import style from "./TaskForm.module.css";
 import MyButton from "../MyButton/MyButton";
-import { db } from '../../firebase'
-import axios from 'axios'
+import { createTask } from "../../store/features/taskSlice";
+
+
 function TaskForm() {
+  const dispatch = useDispatch()
   const [title,setTitle]  = useState("")
   const [tag,setTag]  = useState("")
   const [tags,setTags] = useState([])
@@ -20,35 +22,18 @@ function TaskForm() {
   }
 
 
-  // const handleCreateTask = (e) => {
-  //   console.log('yes task form submit')
-  //     e.preventDefault()
-  //     const myId = Date.now()
-  //     set(ref(db, `/${myId}`), {
-  //       myId,
-  //       title,
-  //       tags
-  //     })
+
+
 
   const handleCreateTask = (e) => {
     e.preventDefault()
 
-    // fetch('http://127.0.0.1:8000/api/create', {
-    //   method:"POST",
-    //   headers:{
-    //     "Content-Type" :'application/json'
-    //   },
-    //   body:JSON.stringify({
-    //     title:"SALAM",
-    //     is_completed:false,
-    //     tags:['salam1','salam2']
-    //   })
-    // })
-    axios.post('http://127.0.0.1:8000/api/create', {
-      title:"bbir1",
-      is_completed:false,
-      tags:['salam2','salam3']
-    })
+    dispatch(createTask({
+      title:"ETIBAR TASK",
+      user_id:"1234567",
+      tags:['etibartask1', 'etibartask2'],
+      is_completed:false
+    }))
   }
 
       
