@@ -21,8 +21,8 @@ function Login() {
         password,
       })
     );
-    dispatch(setUser({ name, email, password }))
-    navigate('/',{replace:true,state:name})
+    // dispatch(setUser({ name, email, password }))
+    // navigate('/',{replace:true,state:name})
   }
 
   return (
